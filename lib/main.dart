@@ -36,6 +36,7 @@ class _HomeState extends State<Home> {
       this.humidity = results['main']['humidity'];
       this.windSpeed = results["wind"]['speed'];
     });
+  }
 
     @override
     void initState(){
@@ -89,7 +90,7 @@ class _HomeState extends State<Home> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.only(bottom: 10.0),
+                                  padding: EdgeInsets.only(top: 10.0),
                                   child: Text(currently != null
                                       ? currently > toString()
                                       : 'loading',
@@ -131,7 +132,7 @@ class _HomeState extends State<Home> {
                                       ),
                                       ListTile(
                                         leading: FaIcon(FontAwesomeIcons
-                                            .thermometerHalf),
+                                            .wind),
                                         title: Text("Wind Speed"),
                                         trailing: Text(windSpeed != null
                                             ? windSpeed.toString()
@@ -148,5 +149,3 @@ class _HomeState extends State<Home> {
       );
     }
   }
-
-}
